@@ -6,7 +6,12 @@ require('dotenv').config();
 console.log('API_KEY exists?', !!process.env.API_KEY);
 
 const app = express();
-app.use(cors());
+const cors = require('cors');
+app.use(cors({
+  origin: 'https://sweet-medovik-3b21c7.netlify.app/', 
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type']
+}));
 app.use(express.json());
 
 app.post('/api/ask', async (req, res) => {
