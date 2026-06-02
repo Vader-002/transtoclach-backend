@@ -18,6 +18,7 @@ app.options('/*splat', cors(corsOptions));
 app.use(express.json());
 
 app.post('/api/ask', async (req, res) => {
+    console.log('Received body:', req.body);
     const userQuestion = req.body.question;
     if (!userQuestion) {
         return res.status(400).json({ error: '请输入问题' });
