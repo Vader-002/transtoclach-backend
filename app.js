@@ -40,6 +40,7 @@ app.post('/api/ask', async (req, res) => {
         });
 
         const aiAnswer = response.data.choices[0].message.content;
+        console.log('AI output:',aiAnswer);
         res.json({ answer: aiAnswer });
 
     } catch (error) {
