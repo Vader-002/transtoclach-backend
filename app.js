@@ -14,7 +14,7 @@ const corsOptions = {
   maxAge: 86400
 };
 app.use(cors(corsOptions));
-app.options('*', cors(corsOptions));
+app.options('/*splat', cors(corsOptions));
 app.use(express.json());
 
 app.post('/api/ask', async (req, res) => {
