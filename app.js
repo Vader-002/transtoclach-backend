@@ -7,11 +7,11 @@ console.log('API_KEY exists?', !!process.env.API_KEY);
 
 const app = express();
 const corsOptions = {
-  origin: 'https://sweet-medovik-3b21c7.netlify.app', // 替换成你的真实前端地址
-  methods: ['GET', 'POST', 'OPTIONS'],
-  allowedHeaders: ['Content-Type'],
-  credentials: true,
-  maxAge: 86400
+    origin: '*', // 在测试阶段，先允许所有来源
+    methods: ['GET', 'POST', 'OPTIONS'], // 明确允许 OPTIONS 方法
+    allowedHeaders: ['Content-Type'],
+    credentials: true,
+    maxAge: 86400
 };
 app.use(cors(corsOptions));
 app.options('/*splat', cors(corsOptions));
